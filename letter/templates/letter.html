@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Letter Pad</title>
+
+    {% load static %}
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .page {
+            width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* 🔴 HEADER */
+        .header {
+            text-align: center;
+            color: red;
+        }
+
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 90px;
+            height: auto;
+        }
+
+        .title h2 {
+            margin: 0;
+            font-size: 26px;
+        }
+
+        .title h3 {
+            margin: 4px 0;
+            font-size: 20px;
+        }
+
+        .title h4 {
+            margin: 4px 0;
+            font-size: 16px;
+        }
+
+        .title p {
+            margin: 4px 0;
+            font-size: 14px;
+            color: green;
+        }
+
+        /* 🔴 CONTACT LINE */
+        .contact {
+            border-top: 2px solid red;
+            border-bottom: 2px solid red;
+            margin-top: 10px;
+            padding: 6px;
+            font-weight: bold;
+            color: red;
+            font-size: 14px;
+        }
+
+        /* 📅 DATE */
+        .date {
+            text-align: right;
+            margin-top: 15px;
+            margin-right: 20px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        /* ✍️ FULL PAGE TYPING */
+        .content {
+            margin-top: 25px;
+            min-height: 650px;
+            outline: none;
+            white-space: pre-wrap;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* 🖨️ PRINT BUTTON */
+        .btn {
+            margin-top: 10px;
+            padding: 10px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media print {
+            .btn {
+                display: none;
+            }
+
+            .page {
+                margin: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- 🔴 HEADER -->
+    <div class="header">
+
+        <div class="top-row">
+
+            <!-- LEFT LOGO (YOUR IMAGE) -->
+            <img src="{% static 'left_logo.jpg' %}" class="logo">
+
+            <!-- CENTER TEXT -->
+            <div class="title">
+                <h2>இந்திய கம்யூனிஸ்ட் கட்சி</h2>
+                <h4>ஆனைமலை வட்டாரக்குழு</h4>
+
+                <h3>COMMUNIST PARTY OF INDIA</h3>
+                <h4>ANAMALAI TALUK COUNCIL</h4>
+
+                <p>BALAN ILLAM, Thengaipaarai Road, Kottur Malayandipattanam.</p>
+            </div>
+
+            <!-- RIGHT LOGO (YOUR IMAGE) -->
+            <img src="{% static 'right_logo.jpg' %}" class="logo">
+
+        </div>
+
+        <!-- CONTACT LINE -->
+        <div class="contact">
+            S.ஆறுமுகம் தாலுக்கா செயலாளர் &nbsp;&nbsp;&nbsp; செல்: 99426 44416, 94876 14416
+        </div>
+
+    </div>
+
+    <!-- 📅 DATE -->
+    <div class="date" contenteditable="true">
+        தேதி:
+    </div>
+
+    <!-- ✍️ TYPE AREA -->
+    <div class="content" contenteditable="true">
+    </div>
+
+    <!-- 🖨️ PRINT -->
+    <button class="btn" onclick="window.print()">Print</button>
+
+</div>
+
+</body>
+</html>
