@@ -1,0 +1,1 @@
+web: gunicorn communist_letterpad.wsgi
